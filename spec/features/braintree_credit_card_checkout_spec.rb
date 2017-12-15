@@ -34,7 +34,7 @@ shared_context "checkout setup" do
   end
 end
 
-describe 'entering credit card details', type: :feature, js: true do
+describe 'entering credit card details', type: :feature, js: true, driver: :chrome do
   context "with valid credit card data", vcr: { cassette_name: 'checkout/valid_credit_card' } do
     include_context "checkout setup"
 

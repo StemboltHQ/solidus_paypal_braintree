@@ -8,7 +8,7 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
         <customer>
-          <payment-method-nonce>fake-paypal-future-nonce</payment-method-nonce>
+          <payment-method-nonce>fake-paypal-billing-agreement-nonce</payment-method-nonce>
         </customer>
     headers:
       Accept-Encoding:
@@ -16,7 +16,7 @@ http_interactions:
       Accept:
       - application/xml
       User-Agent:
-      - Braintree Ruby Gem 2.72.0
+      - Braintree Ruby Gem 2.80.1
       X-Apiversion:
       - '4'
       Authorization:
@@ -29,7 +29,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Fri, 03 Feb 2017 22:32:31 GMT
+      - Thu, 14 Dec 2017 23:43:58 GMT
       Content-Type:
       - application/xml; charset=utf-8
       Transfer-Encoding:
@@ -50,30 +50,21 @@ http_interactions:
       Content-Encoding:
       - gzip
       Etag:
-      - W/"756227c2770005f5570d050f53efc0a0"
+      - W/"d2aeffce873e93f6c1155aa12487b80e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f6593d10-f361-4f36-81ec-554c784754de
+      - 72d358f6-855e-4d68-b101-7d71ca8b06f2
       X-Runtime:
-      - '0.854604'
+      - '0.296299'
+      Content-Security-Policy:
+      - frame-ancestors 'self'
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAP8ElVgAA6RTwXLjIAy95ys8vhMSZ9s0HcfZ035B97KXjmxkmxaEB3Cb
-        /P2CHSdtnT3sdIaL3nuS4Enkh6NWyRtaJw3t0/VylSZIlRGSmn36++kXe0gP
-        xSKveueNRlsskiSXotjsVvf32e4u5yGIWOCqFsizEG+taHbZy7bU2/r1rt3k
-        /CMb1bW0zjMCjQlJtU+97THlA6XgX0xldAd0muGoQaoZ2rWG5jVqOM6wdyyd
-        9Df6WQSPgoFP/KnDfSpC6KXGtMhW6y1bZWy1ecqyx0046z85vyYM+X0n/i//
-        mjD2HzxntUQl3OVKQnpWgRXuXBSshdP0Zjh1oBhUlenJf1ZEwUwyggEupVJh
-        5Awai6hxmNRXQwbhN00Za5yXiX1apI/opBRYQ6+mVqUxCoHSIt4p52fyIh72
-        oHgBwqUw+BOPoDuFy7A2OR+5SSk1NMh6q4rW+849cg7OoXfL0oIkHyxowp3f
-        4RSTebAsOvKs0bdGPCvTGD7auOyoOSC9SWsoSvYOSJTmGH7FpcPU0/Wlq6zs
-        fPhoN2Y3aLx5RSq2dPzRPuR8jCbum9s0vtux+A0JFZMkvYz8V29rUC6Ye0t6
-        qRNeH+dEtbm5I0pqGTv3DpmxYhjpXJjz+S5+xdwAghAWw4Bmtl2Xplj8BQAA
-        //8DAGp+2pTKBAAA
+        H4sIAL4MM1oAA6RTTXPiMAy98ysyuRs3QBfKhLCn/QXdy14YJVYSFX9kbKeFf79OQqAl7GGnR733JFl6cro/KRm9o3Vk9C5O5k9xhLowgnS1i3+//mKbeJ/N0qJ13ii02SyKUhJZkvxINsnmZZXyEHVgIIsatGchXltRvSze1rlal8fnepnyz2ynLsk6zzQojDTJXextizHvKQn/YgqjGtDnCY4KSE7QpjZ6WqOE0wT7wNyRf9DPIngUDHzkzw3uYhFCTwrjbPGUrFmyYMnqdbHcrpbb582flN8S+vy2Ef+Xf0sY+vdLZyWhFO76JEGeFWCFuxQFa+E8zgznBiSDojCt9l8VnWAiGcAA5yRl8JxBZREVDk4N2sOFO1y5A4mUP8wYy31zdUONy82xr/f2GR6lAkto5dgrN0Yi6DjrvEz5hbyK+3PJ3kDjXBj8OQw5D8eV8oEahaSgQtZamdXeN27LOTiH3s1zC6R9GLsKb/6Ac5fMQ51+Nwp9bcRBmsrwS+1GV3vU72SN7iQ7B1rk5hT+zrXD2NO1uSssNT78xwcO9xpvjqizfLGyx+DDEI3cN29umNux7rNqlIw0eer4+9WWIF3Y7SPptU6YvrNJl+b+a/W0JEVd59YhM1b0jk6FKZ9e7D3mehCEsBgMmqztdjPZ7C8AAAD//wMA8uiq2fEEAAA=
     http_version: 
-  recorded_at: Fri, 03 Feb 2017 22:32:31 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 14 Dec 2017 23:43:58 GMT
+recorded_with: VCR 4.0.0

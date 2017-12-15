@@ -95,7 +95,8 @@ describe SolidusPaypalBraintree::TransactionImport do
     let(:transaction) do
       SolidusPaypalBraintree::Transaction.new nonce: 'fake-valid-nonce',
         payment_method: payment_method, address: transaction_address,
-        payment_type: "ApplePay", phone: '123-456-7890', email: 'user@example.com'
+        payment_type: SolidusPaypalBraintree::Source::PAYPAL,
+        phone: '123-456-7890', email: 'user@example.com'
     end
 
     before do
@@ -176,31 +177,6 @@ describe SolidusPaypalBraintree::TransactionImport do
 
           it 'includes the tax in the payment' do
             subject
-            expect(order.payments.first.amount).to eq 16
-          end
-        end
-
-        context 'with a less expensive tax category' do
-          before do
-            original_zone = Spree::Zone.create name: 'first address tax'
-            original_zone.members << Spree::ZoneMember.new(zoneable: address.state)
-            original_tax_rate = create :tax_rate, zone: original_zone, amount: 0.2
-
-            #new address is NY
-            ny_zone = Spree::Zone.create name: 'nyc tax'
-            ny_zone.members << Spree::ZoneMember.new(zoneable: new_york)
-            ny_tax_rate = create :tax_rate, tax_category: original_tax_rate.tax_category, zone: ny_zone, amount: 0.1
-          end
-
-          it 'includes the lower tax in the payment' do
-            #so shipments and shipment cost is calculated before transaction import
-            order.next!; order.next!
-            #precondition
-            expect(order.additional_tax_total).to eq 2
-            expect(order.total).to eq 17
-
-            subject
-            expect(order.additional_tax_total).to eq 1
             expect(order.payments.first.amount).to eq 16
           end
         end
